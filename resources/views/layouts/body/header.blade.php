@@ -1,21 +1,25 @@
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <h1 class="logo mr-auto"><a href="index.html"><span>Com</span>pany</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="{{asset('fontend/assets/img/logo.png')}}" alt=""> 
+      <!--  <h1>TransFlexible</h1>-->
+      </a>
 
-      <nav class="nav-menu d-none d-lg-block">
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-
-          <li class="drop-down"><a href="">About</a>
+          <li><a href="/" class="active">Accueil</a></li>
+          <li><a href="about.html">A propos</a></li>
+          <li><a href="services.html">Services</a></li>
+        <!--     <li><a href="pricing.html">Pricing</a></li>-->
+    <!--      <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="team.html">Team</a></li>
-              <li><a href="testimonials.html">Testimonials</a></li>
-              <li class="drop-down"><a href="#">Deep Drop Down</a>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
@@ -24,25 +28,17 @@
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
               </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
-
-          <li><a href="services.html">Services</a></li>
-          <li><a href="{{ route('portfolio') }}">Portfolio</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="{{ route('contact') }}">Contact</a></li>
-          <li><a href="{{ route('login') }}">Login</a></li>
-
+          </li>-->
+          <li><a href="{{route('contact')}}">Contact</a></li>
+          <li><a class="get-a-quote" href="get-a-quote.html">Quotation</a></li>
+          <li><a href="{{route('login')}}">Login <i class="bi bi-person-lock"></i></a></li>
         </ul>
-      </nav><!-- .nav-menu -->
-
-      <div class="header-social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
-      </div>
+      </nav><!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
+  <!-- End Header -->

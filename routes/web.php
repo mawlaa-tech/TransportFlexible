@@ -20,7 +20,8 @@ Route::get('/', function () {
     $brands = DB::table('brands')->get();
     $abouts = DB::table('home_abouts')->first();
     $images = Multipic::all();
-    return view('home', compact('brands','abouts','images'));
+    $sliders = DB::table('sliders')->get();
+    return view('home', compact('brands','abouts','images','sliders'));
 });
 
 Route::get('/home', function () {
@@ -62,7 +63,9 @@ Route::post('/multi/add', [BrandController::class, 'StoreImg'])->name('store.ima
 Route::get('/home/slider', [HomeController::class, 'HomeSlider'])->name('home.slider');
 Route::get('/add/slider', [HomeController::class, 'AddSlider'])->name('add.slider');
 Route::post('/store/slider', [HomeController::class, 'StoreSlider'])->name('store.slider');
-
+Route::get('/edit/slider/{id}', [HomeController::class, 'Edit']);
+Route::post('/update/slider/{id}', [HomeController::class, 'Update']);
+Route::get('/delete/slider/{id}', [HomeController::class, 'Delete']);
 
 
 // Home About All Route
