@@ -7,6 +7,7 @@ use App\Http\Controllers\ChangePass;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServiceController;
 use App\Models\User;
 use App\Models\Multipic;
 use Illuminate\Support\Facades\DB;
@@ -95,7 +96,12 @@ Route::get('/admin/message', [ContactController::class, 'AdminMessage'])->name('
 Route::get('/contact', [ContactController::class, 'Contact'])->name('contact');
 Route::post('/contact/form', [ContactController::class, 'ContactForm'])->name('contact.form');
 
+// Admin Services routes
+Route::get('/admin/service', [ServiceController::class, 'AllService'])->name('all.service');
+Route::get('/admin/add/service', [ServiceController::class, 'AddService'])->name('add.service');
+Route::post('/admin/store/service', [ServiceController::class, 'StoreService'])->name('store.service');
 
+//
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
     // $users = User::all();
