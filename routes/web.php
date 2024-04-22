@@ -100,7 +100,9 @@ Route::post('/contact/form', [ContactController::class, 'ContactForm'])->name('c
 Route::get('/admin/service', [ServiceController::class, 'AllService'])->name('all.service');
 Route::get('/admin/add/service', [ServiceController::class, 'AddService'])->name('add.service');
 Route::post('/admin/store/service', [ServiceController::class, 'StoreService'])->name('store.service');
-
+Route::get('/admin/edit/service/{id}', [ServiceController::class, 'EditService']);
+Route::post('/admin/update/service/{id}', [ServiceController::class, 'UpdateService']);
+Route::get('/admin/delete/service/{id}', [ServiceController::class, 'DeleteService']);
 //
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 

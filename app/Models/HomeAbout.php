@@ -11,6 +11,13 @@ class HomeAbout extends Model
     protected $fillable = [
         'title',
         'short_dis',
-        'long_dis',        
+        'long_dis', 
+        'title_value_1',
+        'des_value_1',
+        'title_value_2',
+        'des_value_2',
+        'title_value_3',
+        'des_value_3',
+        'image'
     ];
 }

@@ -3,13 +3,13 @@
 @section('admin')
 
     <div class="py-12"> 
-   <div class="container">
+   <div class="container-lg">
     <div class="row">
+<div class="col-md-12">
 
-<h4>Home About </h4>
     <a href="{{ route('add.about') }}"> <button class="btn btn-info">Add About</button>  </a>
 <br><br>
-
+</div>
 
     <div class="col-md-12">
      <div class="card">
@@ -35,7 +35,9 @@
       <th scope="col" width="15%">Home Title</th>
       <th scope="col" width="25%">Short Description</th>
       <th scope="col" width="15%">Long Description</th>
+      <th scope="col" width="15%">Image</th>
       <th scope="col" width="15%">Action</th>
+   
     </tr>
   </thead>
   <tbody>
@@ -46,6 +48,7 @@
       <td> {{ $about->title }} </td>
       <td> {{ $about->short_dis }} </td>
       <td> {{ $about->long_dis }} </td>
+      <td> <img src="{{asset( $about->image) }}" alt="" style="height:40px; width:70px;" ></td>
        
        <td> 
        <a href="{{ url('about/edit/'.$about->id) }}" class="btn btn-info">Edit</a>
