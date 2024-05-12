@@ -7,7 +7,7 @@
         <img src="{{asset('fontend/assets/img/logo.png')}}" alt=""> 
       <!--  <h1>TransFlexible</h1>-->
       </a>
-
+      
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
@@ -34,7 +34,7 @@
             </ul>
           </li>-->
           <li><a href="{{route('contact')}}">Contact</a></li>
-          <li><a class="get-a-quote" href="get-a-quote.html">Quotation</a></li>
+          <li><a class="get-a-quote" href="{{URL::to('/quote')}}">Soumission</a></li>
           <li><a href="{{route('login')}}">Login <i class="bi bi-person-lock"></i></a></li>
         </ul>
       </nav><!-- .navbar -->

@@ -8,27 +8,27 @@
           <h2>Create Contact</h2>
      </div>
      <div class="card-body">
-     <form action="{{ route('store.contact') }}" method="POST">
+     <form action="{{ url('admin/contact/update/' .$contacts->id) }}" method="POST">
           @csrf
           <div class="form-group">
                <label for="exampleFormControlInput1">Title </label>
-       <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+       <input type="text" name="title" class="form-control" id="exampleFormControlInput1" value="{{$contacts->title}}">
                          
                     </div>
                     <div class="form-group">
                          <label for="exampleFormControlInput1">Short description </label>
-                 <input type="text" name="short_des" class="form-control" id="exampleFormControlInput1" placeholder="Contact Email">
+                 <input type="text" name="short_des" class="form-control" id="exampleFormControlInput1" value="{{$contacts->short_des}}">
                                    
                               </div>
                <div class="form-group">
           <label for="exampleFormControlInput1">Contact Email </label>
-  <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Contact Email">
+  <input type="email" name="email" class="form-control" id="exampleFormControlInput1" value="{{$contacts->email}}">
                     
                </div>
 
                <div class="form-group">
           <label for="exampleFormControlInput1">Contact Phone </label>
-  <input type="text" name="phone" class="form-control" id="exampleFormControlInput1" placeholder="Contact Phone">
+  <input type="text" name="phone" class="form-control" id="exampleFormControlInput1" value="{{$contacts->phone}}">
                     
                </div>
                 
@@ -37,7 +37,7 @@
                <div class="form-group">
                     <label for="exampleFormControlTextarea1">Contact Adress</label>
  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address">
-
+    {{$contacts->address}}"
  </textarea>
                </div>
 

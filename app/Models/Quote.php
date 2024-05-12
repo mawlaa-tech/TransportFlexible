@@ -9,17 +9,17 @@ class Quote extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'title',
-        'short_des',
-        'long_des',
-        'city_departure',
-        'city_delivery',
+        
+        'departure',
+        'delivery',
         'weight',
         'dimension',
         'name',
         'email',
         'phone',
         'message',
-        'image'
-    ]
+        'quantity',
+        'date'
+        
+    ];
 }

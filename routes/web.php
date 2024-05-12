@@ -8,6 +8,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\QuoteController;
 use App\Models\User;
 use App\Models\Multipic;
 use Illuminate\Support\Facades\DB;
@@ -88,6 +89,9 @@ Route::get('/admin/contact', [ContactController::class, 'AdminContact'])->name('
 Route::get('/admin/add/contact', [ContactController::class, 'AdminAddContact'])->name('add.contact');
 Route::post('/admin/store/contact', [ContactController::class, 'AdminStoreContact'])->name('store.contact');
 Route::get('/admin/message', [ContactController::class, 'AdminMessage'])->name('admin.message');
+Route::get('/admin/contact/edit/{id}',  [ContactController::class, 'EditContact']);
+Route::post('/admin/contact/update/{id}', [ContactController::class, 'UpdateContact']);
+Route::get('/admin/contact/delete/{id}', [ContactController::class, 'DeleteContact']);
 
 
 
@@ -103,6 +107,9 @@ Route::post('/admin/store/service', [ServiceController::class, 'StoreService'])-
 Route::get('/admin/edit/service/{id}', [ServiceController::class, 'EditService']);
 Route::post('/admin/update/service/{id}', [ServiceController::class, 'UpdateService']);
 Route::get('/admin/delete/service/{id}', [ServiceController::class, 'DeleteService']);
+//home Quote
+Route::get('/quote', [QuoteController::class, 'Quote'])->name('quote');
+Route::post('/quote/store', [QuoteController::class, 'StoreQuote'])->name('store.quote');
 //
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
