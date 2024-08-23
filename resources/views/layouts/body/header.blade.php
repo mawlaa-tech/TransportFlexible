@@ -14,7 +14,7 @@
         <ul>
           <li><a href="/" class="active">Accueil</a></li>
           <li><a href="about.html">A propos</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="{{URL::to('/services')}}">Services</a></li>
         <!--     <li><a href="pricing.html">Pricing</a></li>-->
     <!--      <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>

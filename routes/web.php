@@ -23,7 +23,8 @@ Route::get('/', function () {
     $abouts = DB::table('home_abouts')->first();
     $images = Multipic::all();
     $sliders = DB::table('sliders')->get();
-    return view('home', compact('brands','abouts','images','sliders'));
+    $services = DB::table('services')->get();
+    return view('home', compact('brands','abouts','images','sliders','services'));
 });
 
 Route::get('/home', function () {
@@ -107,6 +108,10 @@ Route::post('/admin/store/service', [ServiceController::class, 'StoreService'])-
 Route::get('/admin/edit/service/{id}', [ServiceController::class, 'EditService']);
 Route::post('/admin/update/service/{id}', [ServiceController::class, 'UpdateService']);
 Route::get('/admin/delete/service/{id}', [ServiceController::class, 'DeleteService']);
+//Services-details Home
+Route::get('/service-details/{id}',[ServiceController::class, 'GetServiceDetails']);
+Route::get('/services', [ServiceController::class,'GetServices']);
+
 //home Quote
 Route::get('/quote', [QuoteController::class, 'Quote'])->name('quote');
 Route::post('/quote/store', [QuoteController::class, 'StoreQuote'])->name('store.quote');

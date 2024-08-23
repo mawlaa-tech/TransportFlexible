@@ -15,30 +15,33 @@
         <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
           <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
           <div>
-            <h4 class="title">Lorem Ipsum</h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            <h4 class="title"><a href="{{url('service-details/'.$services[0]->id)}}">{{$services[0]->title_2 }}</a></h4>
+            <p class="description">{{$services[0]->description_2 }}</p>
+            <a href="{{url('service-details/'.$services[0]->id)}}" class="readmore stretched-link"><span>Plus détails</span><i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
         <!-- End Service Item -->
 
-        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon flex-shrink-0"><i class="fa-solid fa-truck"></i></div>
+        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+          <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
           <div>
-            <h4 class="title">Dolor Sitema</h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            <h4 class="title"><a href="{{url('service-details/'.$services[0]->id)}}">{{$services[0]->title_2 }}</a></h4>
+            <p class="description">{{$services[0]->description_2 }}</p>
+            <a href="{{url('service-details/'.$services[0]->id)}}" class="readmore stretched-link"><span>Plus détails</span><i class="bi bi-arrow-right"></i></a>
           </div>
-        </div><!-- End Service Item -->
+        </div>
+        <!-- End Service Item -->
 
-        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon flex-shrink-0"><i class="fa-solid fa-truck-ramp-box"></i></div>
+     
+        <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up">
+          <div class="icon flex-shrink-0"><i class="fa-solid fa-cart-flatbed"></i></div>
           <div>
-            <h4 class="title">Sed ut perspiciatis</h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            <a href="service-details.html" class="readmore stretched-link"><span>Learn More</span><i class="bi bi-arrow-right"></i></a>
+            <h4 class="title"><a href="{{url('service-details/'.$services[0]->id)}}">{{$services[0]->title_2 }}</a></h4>
+            <p class="description">{{$services[0]->description_2 }}</p>
+            <a href="{{url('service-details/'.$services[0]->id)}}" class="readmore stretched-link"><span>Plus détails</span><i class="bi bi-arrow-right"></i></a>
           </div>
-        </div><!-- End Service Item -->
+        </div>
+        <!-- End Service Item -->
 
       </div>
 
@@ -68,7 +71,7 @@
               </div>
             </li>
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-fullscreen-exit"></i>
+              <i class="bi bi-geo-alt-fill"></i>
               <div>
                 <h5>Magnam soluta odio exercitationem reprehenderi</h5>
                 <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna pasata redi</p>
@@ -93,8 +96,8 @@
     <div class="container" data-aos="fade-up">
 
       <div class="section-header">
-        <span>Our Services</span>
-        <h2>Our Services</h2>
+        <span>Nos Services</span>
+        <h2>Nos Services</h2>
 
       </div>
 
@@ -105,8 +108,8 @@
             <div class="card-img">
               <img src="{{asset('fontend/assets/img/storage-service.jpg')}}" alt="" class="img-fluid">
             </div>
-            <h3><a href="service-details.html" class="stretched-link">Storage</a></h3>
-            <p>Cumque eos in qui numquam. Aut aspernatur perferendis sed atque quia voluptas quisquam repellendus temporibus itaqueofficiis odit</p>
+            <h3><a href="#" class="stretched-link">{{$services[0]->title_1 }}</a></h3>
+            <p>{{$services[0]->description_3 }}</p>
           </div>
         </div><!-- End Card Item -->
 
@@ -190,15 +193,12 @@
           <img src="{{asset('fontend/assets/img/features-1.jpg')}}" class="img-fluid" alt="">
         </div>
         <div class="col-md-7">
-          <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+          <h3>{{$services[0]->quality_1 }}</h3>
           <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua.
+          
           </p>
           <ul>
-            <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-            <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-            <li><i class="bi bi-check"></i> Ullam est qui quos consequatur eos accusamus.</li>
+            <li><i class="bi bi-check"></i> {{$services[0]->description_4 }}</li>
           </ul>
         </div>
       </div><!-- Features Item -->
@@ -257,163 +257,11 @@
     </div>
   </section><!-- End Features Section -->
 
-  <!-- ======= Pricing Section ======= -->
-  <section id="pricing" class="pricing pt-0">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-header">
-        <span>Pricing</span>
-        <h2>Pricing</h2>
-
-      </div>
-
-      <div class="row gy-4">
-
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="pricing-item">
-            <h3>Free Plan</h3>
-            <h4><sup>$</sup>0<span> / month</span></h4>
-            <ul>
-              <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-              <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-              <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-              <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-              <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-            </ul>
-            <a href="#" class="buy-btn">Buy Now</a>
-          </div>
-        </div><!-- End Pricing Item -->
-
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="pricing-item featured">
-            <h3>Business Plan</h3>
-            <h4><sup>$</sup>29<span> / month</span></h4>
-            <ul>
-              <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-              <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-              <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-              <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
-              <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
-            </ul>
-            <a href="#" class="buy-btn">Buy Now</a>
-          </div>
-        </div><!-- End Pricing Item -->
-
-        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="pricing-item">
-            <h3>Developer Plan</h3>
-            <h4><sup>$</sup>49<span> / month</span></h4>
-            <ul>
-              <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-              <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-              <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-              <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
-              <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
-            </ul>
-            <a href="#" class="buy-btn">Buy Now</a>
-          </div>
-        </div><!-- End Pricing Item -->
-
-      </div>
-
-    </div>
-  </section><!-- End Pricing Section -->
+  
 
   <!-- ======= Testimonials Section ======= -->
   <!-- End Testimonials Section -->
 
-  <!-- ======= Frequently Asked Questions Section ======= -->
-  <section id="faq" class="faq">
-    <div class="container" data-aos="fade-up">
-
-      <div class="section-header">
-        <span>Frequently Asked Questions</span>
-        <h2>Frequently Asked Questions</h2>
-
-      </div>
-
-      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-10">
-
-          <div class="accordion accordion-flush" id="faqlist">
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-1">
-                  <i class="bi bi-question-circle question-icon"></i>
-                  Non consectetur a erat nam at lectus urna duis?
-                </button>
-              </h3>
-              <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                <div class="accordion-body">
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </div>
-              </div>
-            </div><!-- # Faq item-->
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
-                  <i class="bi bi-question-circle question-icon"></i>
-                  Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
-                </button>
-              </h3>
-              <div id="faq-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                <div class="accordion-body">
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </div>
-              </div>
-            </div><!-- # Faq item-->
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
-                  <i class="bi bi-question-circle question-icon"></i>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
-                </button>
-              </h3>
-              <div id="faq-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                <div class="accordion-body">
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </div>
-              </div>
-            </div><!-- # Faq item-->
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-4">
-                  <i class="bi bi-question-circle question-icon"></i>
-                  Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?
-                </button>
-              </h3>
-              <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                <div class="accordion-body">
-                  <i class="bi bi-question-circle question-icon"></i>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </div>
-              </div>
-            </div><!-- # Faq item-->
-
-            <div class="accordion-item">
-              <h3 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-5">
-                  <i class="bi bi-question-circle question-icon"></i>
-                  Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
-                </button>
-              </h3>
-              <div id="faq-content-5" class="accordion-collapse collapse" data-bs-parent="#faqlist">
-                <div class="accordion-body">
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-                </div>
-              </div>
-            </div><!-- # Faq item-->
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Frequently Asked Questions Section -->
+  
 
   @endsection

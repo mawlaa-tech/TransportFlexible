@@ -46,12 +46,12 @@ class ServiceController extends Controller
         $name_gen_1 = hexdec(uniqid()).'.'.$service_image_1->getClientOriginalExtension();
         $name_gen_2 = hexdec(uniqid()).'.'.$service_image_2->getClientOriginalExtension();
         $name_gen_3 = hexdec(uniqid()).'.'.$service_image_3->getClientOriginalExtension();
-        Image::make($service_image_1)->resize(800,600)->save('image/slider/'.$name_gen_1);
-        Image::make($service_image_2)->resize(1024,648)->save('image/slider/'.$name_gen_2);
-        Image::make($service_image_3)->resize(800,600)->save('image/slider/'.$name_gen_3);
-        $last_img_1 = 'image/slider/'.$name_gen_1;
-        $last_img_2 = 'image/slider/'.$name_gen_2;
-        $last_img_3 = 'image/slider/'.$name_gen_3;
+        Image::make($service_image_1)->resize(800,600)->save('image/service/'.$name_gen_1);
+        Image::make($service_image_2)->resize(1024,648)->save('image/service/'.$name_gen_2);
+        Image::make($service_image_3)->resize(800,600)->save('image/service/'.$name_gen_3);
+        $last_img_1 = 'image/service/'.$name_gen_1;
+        $last_img_2 = 'image/service/'.$name_gen_2;
+        $last_img_3 = 'image/service/'.$name_gen_3;
  
         Service::insert([
             'title_1' => $request->title_1,
@@ -111,12 +111,12 @@ class ServiceController extends Controller
             $name_gen_1 = hexdec(uniqid()).'.'.$service_image_1->getClientOriginalExtension();
             $name_gen_2 = hexdec(uniqid()).'.'.$service_image_2->getClientOriginalExtension();
             $name_gen_3 = hexdec(uniqid()).'.'.$service_image_3->getClientOriginalExtension();
-            Image::make($service_image_1)->resize(800,600)->save('image/slider/'.$name_gen_1);
-            Image::make($service_image_2)->resize(1024,648)->save('image/slider/'.$name_gen_2);
-            Image::make($service_image_3)->resize(800,600)->save('image/slider/'.$name_gen_3);
-            $last_img_1 = 'image/slider/'.$name_gen_1;
-            $last_img_2 = 'image/slider/'.$name_gen_2;
-            $last_img_3 = 'image/slider/'.$name_gen_3;
+            Image::make($service_image_1)->resize(800,600)->save('image/service/'.$name_gen_1);
+            Image::make($service_image_2)->resize(1024,648)->save('image/service/'.$name_gen_2);
+            Image::make($service_image_3)->resize(800,600)->save('image/service/'.$name_gen_3);
+            $last_img_1 = 'image/service/'.$name_gen_1;
+            $last_img_2 = 'image/service/'.$name_gen_2;
+            $last_img_3 = 'image/service/'.$name_gen_3;
             
             unlink($old_image_1, $old_image_2, $old_image_3);
             Service::find($id)->update([
@@ -169,16 +169,29 @@ Service::find($id)->update([
     }
     public function DeleteService($id){
         $image=  Service::find($id);
-        $old_image_1 = $image->image_1;
+        $old_image_1 = $image->image_1; 
         $old_image_2 = $image->image_2;
         $old_image_3 = $image->image_3;
-        unlink($old_image_1 && $old_image_2 && $old_image_3);
+        unlink($old_image_1, $old_image_2, $old_image_3);
 
-        $service= Srevice::find($id)->delete();
+        $service= Service::find($id)->delete();
+       
         $notification = array(
             'message'=> 'service deleted successfully',
             'alert-type'=>'danger'
         );
         return Redirect()-route('all.service')->with($notification);
+    }
+
+    // Home pages service details
+    public function GetServiceDetails($id){
+        $service = Service::find($id);
+        $services = Service::latest()->get();
+        return view('pages.service-details', compact('service', 'services'));
+    }
+
+    public function GetServices(){
+        $services = Service::latest()->get(); 
+        return view('pages.services', compact('services'));
     }
 }
