@@ -48,8 +48,8 @@
       <td> <img src="{{ asset($slider->image) }}" style="height:40px; width:70px;" > </td> 
        
        <td> 
-       <a href="{{ url('slider/edit/'.$slider->id) }}" class="btn btn-info">Edit</a>
-       <a href="{{ url('slider/delete/'.$slider->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
+       <a href="{{ url('edit/slider/'.$slider->id) }}" class="btn btn-info">Edit</a>
+       <a href="{{ url('delete/slider/'.$slider->id) }}" onclick="return confirm('Are you sure to delete')" class="btn btn-danger">Delete</a>
         </td> 
 
 

@@ -9,7 +9,7 @@ class CreateHomeAboutsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidp
      */
     public function up()
     {
@@ -18,6 +18,13 @@ class CreateHomeAboutsTable extends Migration
             $table->string('title');
             $table->text('short_dis');
             $table->text('long_dis');
+            $table->string('title_value_1');
+            $table->string('des_value_1');
+            $table->string('title_value_2');
+            $table->string('des_value_2');
+            $table->string('title_value_3');
+            $table->string('des_value_3');
+            $table->string('image');
             $table->timestamps();
         });
     }

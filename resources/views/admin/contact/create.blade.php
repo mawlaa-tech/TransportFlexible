@@ -10,6 +10,16 @@
      <div class="card-body">
      <form action="{{ route('store.contact') }}" method="POST">
           @csrf
+          <div class="form-group">
+               <label for="exampleFormControlInput1">Title </label>
+       <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+                         
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleFormControlInput1">Short description </label>
+                 <input type="text" name="short_des" class="form-control" id="exampleFormControlInput1" placeholder="Contact Email">
+                                   
+                              </div>
                <div class="form-group">
           <label for="exampleFormControlInput1">Contact Email </label>
   <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Contact Email">
