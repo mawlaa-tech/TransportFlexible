@@ -17,7 +17,7 @@
           <div>
             <h4 class="title"><a href="{{url('service-details/'.$services[0]->id)}}">{{$services[0]->title_2 }}</a></h4>
             <p class="description">{{$services[0]->description_2 }}</p>
-            <a href="{{url('service-details/'.$services[0]->id)}}" class="readmore stretched-link"><span>Plus détails</span><i class="bi bi-arrow-right"></i></a>
+            <a href="{{url('service-details/'.$services[0]->id)}}" class="readmore stretched-link"><span>Plus 1détails</span><i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
         <!-- End Service Item -->
